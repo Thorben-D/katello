@@ -56,7 +56,7 @@ module Katello
           FileUtils.touch(lock_file)
 
           File.open(lock_file, 'r') do |lockfile|
-            lockfile.flock(File::LOCK_EX)
+            #            lockfile.flock(File::LOCK_EX)
             return nil if started? # ensure it wasn't started while we waited for the lock
             start_monitor_thread
             write_pid_file

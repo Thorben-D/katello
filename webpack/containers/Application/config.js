@@ -15,6 +15,7 @@ import ContentDetails from '../../scenes/Content/Details';
 import withHeader from './withHeaders';
 import ChangeContentSource from '../../scenes/Hosts/ChangeContentSource';
 import AlternateContentSource from '../../scenes/AlternateContentSources';
+import RepositoryDetails from '../../scenes/Repositories/Details/index';
 
 // eslint-disable-next-line import/prefer-default-export
 export const links = [
@@ -83,6 +84,11 @@ export const links = [
   {
     path: 'alternate_content_sources/:id([0-9]+)',
     component: WithOrganization(withHeader(AlternateContentSource, { title: __('Alternate Content Sources') })),
+    exact: false,
+  },
+  {
+    path: 'labs/products/:product_id([0-9]+)/repositories/:repository_id([0-9]+)',
+    component: WithOrganization(withHeader(RepositoryDetails, { title: __('Repository Details') })),
     exact: false,
   },
 ];

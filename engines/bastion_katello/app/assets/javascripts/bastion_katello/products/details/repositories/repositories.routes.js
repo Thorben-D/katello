@@ -35,28 +35,28 @@
             }
         });
 
-        $stateProvider.state("product.repository", {
-            abstract: true,
-            url: '/repositories/:repositoryId',
-            permission: 'view_products',
-            views: {
-                '@': {
-                    controller: 'RepositoryDetailsController',
-                    templateUrl: 'products/details/repositories/details/views/repository-details.html'
-                }
-            }
-        })
-        .state('product.repository.info', {
-            url: '',
-            permission: 'view_products',
-            controller: 'RepositoryDetailsInfoController',
-            templateUrl: 'products/details/repositories/details/views/repository-info.html',
-            ncyBreadcrumb: {
-                label: "{{ repository.name }}",
-                parent: 'product.repositories'
-            }
-        })
-        .state('product.repository.advanced_sync', {
+        //.state("product.repository", {
+        //    abstract: true,
+        //    url: '/repositories/:repositoryId',
+        //    permission: 'view_products',
+        //    views: {
+        //        '@': {
+        //            controller: 'RepositoryDetailsController',
+        //            templateUrl: 'products/details/repositories/details/views/repository-details.html'
+        //        }
+        //    }
+        //})
+        //.state('product.repository.info', {
+        //    url: '',
+        //    permission: 'view_products',
+        //    controller: 'RepositoryDetailsInfoController',
+        //    templateUrl: 'products/details/repositories/details/views/repository-info.html',
+        //    ncyBreadcrumb: {
+        //        label: "{{ repository.name }}",
+        //        parent: 'product.repositories'
+        //    }
+        //})
+        $stateProvider.state('product.repository.advanced_sync', {
             url: '/advanced_sync',
             permission: 'view_products',
             controller: 'RepositoryAdvancedSyncController',

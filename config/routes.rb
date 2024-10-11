@@ -41,6 +41,7 @@ Katello::Engine.routes.draw do
   end
 
   match '/labs' => 'react#index', :via => [:get]
+  match '/labs/products/*page/repositories/*page' => 'react#index', :via => [:get]
   match '/labs/*page' => 'react#index', :via => [:get]
   match '/organization_select' => 'react#index', :via => [:get]
 
